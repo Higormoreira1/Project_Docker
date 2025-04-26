@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+ httpd:
+  image: httpd
+  ports:
+   - "8080:80"
+  volumes: 
+   - /data/httpd-apache:/usr/local/apache2/htdocs
+  networks:
+   - rede-httpd
+networks:
+ rede-httpd:
+  driver: bridge
